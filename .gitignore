@@ -2,6 +2,7 @@
 data/land_registry/
 data/ons_postcode_directory/
 databases/
+.uv-cache/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

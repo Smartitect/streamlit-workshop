@@ -4,6 +4,7 @@ from pathlib import Path
 from data_wranglers import TitanicWrangler
 from charting_helpers import TitanicChartingHelper
 
+st.set_page_config(page_title="Titanic Data Exploration")
 
 st.title("Titanic Data Exploration")
 
@@ -11,7 +12,7 @@ st.title("Titanic Data Exploration")
 # ## Load and Prepare Passenger Data
 
 
-RAW_DATA_PATH = Path("../data/input/titanic_passengers.csv")
+RAW_DATA_PATH = Path("../data/titanic/titanic_passengers.csv")
 assert RAW_DATA_PATH.exists(), f"Raw data file not found at {RAW_DATA_PATH}"
 
 @st.cache_data()
@@ -22,9 +23,6 @@ titanic_passengers_raw = load_data()
 
 
 titanic_passengers_cleaned = TitanicWrangler.prepare_data(titanic_passengers_raw)
-
-
-st.expander("View Passenger Details").dataframe(titanic_passengers_cleaned)
 
 
 with st.sidebar:
@@ -73,3 +71,4 @@ elif topic == "Occupation":
 else:
     st.write("Please select a topic to explore from the sidebar.")
 
+st.expander("View Passenger Details").dataframe(titanic_passengers_cleaned)

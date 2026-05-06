@@ -2,10 +2,10 @@
 name = "streamlit-workshop"
 version = "0.1.0"
 description = "Resources to run a workshop for building Streamlit applications."
-requires-python = ">=3.12,<3.14"
+requires-python = "==3.13.*"
 dependencies = [
     "ipykernel",
-    "nbformat>=5.10.4",
+    "nbformat",
     "plotly",
     "polars",
     "pytest",
